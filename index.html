@@ -3,37 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio - Pedro Büttner</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Portfólio - Pedro Henrique Buttner Prado</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="container header-content">
-      <img src="images/pedro.jpg" alt="Foto de Pedro Henrique Büttner Prado" class="profile-img" />
-      <div>
-        <h1>Pedro Henrique Büttner Prado</h1>
-        <p class="subtitle">Estudante | Futuro designer de moda</p>
+  <!-- Header / Navegação -->
+  <header class="p-4 bg-danger text-white sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="images/pedro.jpg" alt="Foto de Pedro Henrique Buttner Prado" class="profile-img me-3">
+        <div>
+          <h1 class="m-0">Pedro Henrique Buttner Prado</h1>
+          <p class="m-0 fw-bold">Estudante | Futuro designer de moda</p>
+        </div>
       </div>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link text-white" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#projetos">Projetos</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#contato">Contato</a></li>
+      </ul>
     </div>
   </header>
 
-  <main class="container">
-    <section class="about">
-      <h2>Sobre mim</h2>
-      <p>Tenho 18 anos e estou cursando o terceiro ano do ensino médio.</p>
-      <p>Tenho interesse em cursar moda/design, terminar o curso de inglês e fazer o projeto PP.</p>
-      <p>Estou iniciando minha trajetória no mercado de trabalho, buscando sempre aprender e crescer.</p>
+  <!-- Main -->
+  <main class="container my-5">
+    <!-- Sobre mim -->
+    <section id="sobre" class="mb-5">
+      <h2 class="mb-3 text-danger">Sobre mim</h2>
+      <p>Tenho 18 anos, gosto de estudar inglês, ver filmes, jogar alguns jogos. Amo música e viajar com amigos. Gosto muito de sempre estar aprendendo algo novo. Tenho uma irmã e valorizo bastante a convivência em família.</p>
     </section>
 
-    <section class="contact">
-      <h2>Contato</h2>
+    <!-- Projetos -->
+    <section id="projetos" class="mb-5">
+      <h2 class="mb-3 text-danger">Projetos</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">Projeto 1</h5>
+              <p class="card-text">Espaço reservado para futuros trabalhos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">Projeto 2</h5>
+              <p class="card-text">Você pode adicionar aqui links para sites, estudos ou ideias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="mb-5">
+      <h2 class="mb-3 text-danger">Contato</h2>
       <p>Email: <a href="mailto:pedrobuttner.prado@gmail.com">pedrobuttner.prado@gmail.com</a></p>
+      <form class="mt-3">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+        </div>
+        <div class="mb-3">
+          <label for="emailForm" class="form-label">Email</label>
+          <input type="email" class="form-control" id="emailForm" placeholder="Digite seu email">
+        </div>
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Mensagem</label>
+          <textarea class="form-control" id="mensagem" rows="4" placeholder="Escreva sua mensagem"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Enviar</button>
+      </form>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2025 Pedro Henrique Büttner Prado</p>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>© 2025 Pedro Henrique Buttner Prado</p>
+    <p>Acesse minhas redes: <i class="bi bi-instagram"></i> <i class="bi bi-whatsapp"></i></p>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
