@@ -1,11 +1,122 @@
-/* Reset básico */
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Pedro Henrique Buttner Prado</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lemon&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <!-- Header / Navegação -->
+  <header class="header p-4 sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="images/pedro.jpg" alt="Pedro Henrique Buttner Prado" class="profile-img me-3">
+        <div>
+          <h1>Pedro Henrique Buttner Prado</h1>
+          <p class="subtitle">Estudante | Futuro designer de moda</p>
+        </div>
+      </div>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+      <div id="acessibilidade" class="menu-acessibilidade"> 
+        <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false">Acessibilidade</button>
+        <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+          <button id="aumentar-fonte" class="btn btn-primary fw-bold">A+</button>
+          <button id="diminuir-fonte" class="btn btn-primary fw-bold">A-</button>
+          <button id="alterna-contraste" class="btn btn-primary fw-bold"><i class="bi bi-shadows"></i></button>         
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5">
+
+    <!-- Sobre mim -->
+    <section id="sobre" class="about mb-5">
+      <h2>Sobre mim</h2>
+      <p>Tenho 18 anos, gosto de estudar inglês, ver filmes, jogar alguns jogos. Amo música e viajar com amigos. Gosto muito de sempre estar aprendendo algo novo. Tenho uma irmã e valorizo bastante a convivência em família.</p>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="mb-5">
+      <h2>Projetos</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">Projeto 1</h5>
+              <p class="card-text">Espaço reservado para futuros trabalhos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">Projeto 2</h5>
+              <p class="card-text">Você pode adicionar aqui links para sites, estudos ou ideias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="mb-5">
+      <h2>Contato</h2>
+      <p>Email: <a href="mailto:pedrobuttner.prado@gmail.com">pedrobuttner.prado@gmail.com</a></p>
+      <form class="mt-3">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+        </div>
+        <div class="mb-3">
+          <label for="emailForm" class="form-label">Email</label>
+          <input type="email" class="form-control" id="emailForm" placeholder="Digite seu email">
+        </div>
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Mensagem</label>
+          <textarea class="form-control" id="mensagem" rows="4" placeholder="Escreva sua mensagem"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer text-center py-3">
+    <p>© 2025 Pedro Henrique Buttner Prado</p>
+    <p>Acesse minhas redes: <i class="bi bi-instagram"></i> <i class="bi bi-whatsapp"></i></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lemon&display=swap');
+
+/* Variáveis */
+:root {
+  --vermelho: #b30000;
+  --laranja-claro: #FF862A;
+  --fundo-escuro: #450000;
+  --texto-claro: #fff;
+}
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fontes */
+/* Body */
 body {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #8b0000 0%, #450000 100%);
@@ -15,79 +126,71 @@ body {
   flex-direction: column;
 }
 
-/* Container central */
-.container {
-  max-width: 900px;
-  width: 90%;
-  margin: 0 auto;
-}
-
 /* Header */
-.header {
-  background-color: rgba(0, 0, 0, 0.35);
-  padding: 50px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+.header, header {
+  background-color: rgba(0,0,0,0.35);
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.header-content {
+.header-content, header .container {
   display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .profile-img {
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 5px solid #fff;
   object-fit: cover;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
-  flex-shrink: 0;
+  box-shadow: 0 0 25px rgba(255,255,255,0.5);
 }
 
-.header-content h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+/* Menu */
+.nav-link {
+  color: #f2a6a6;
+  font-weight: 600;
+  margin-left: 1rem;
 }
 
-.subtitle {
-  font-weight: 400;
-  font-style: italic;
-  font-size: 1.4rem;
-  margin-top: 8px;
-  color: #f7c6c6;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+.nav-link:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
-/* Main */
+/* Main Sections */
 main {
   flex-grow: 1;
   padding: 50px 0;
 }
 
-/* Sections */
 section {
   margin-bottom: 50px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
   transition: background-color 0.3s ease;
 }
 
 section:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.2);
 }
 
 section h2 {
-  font-size: 2rem;
+  font-family: 'Lemon', serif;
+  font-size: 2.5em;
   font-weight: 700;
-  margin-bottom: 20px;
-  border-bottom: 3px solid #f2a6a6;
+  color: var(--laranja-claro);
+  border-bottom: 3px solid var(--laranja-claro);
   padding-bottom: 10px;
-  max-width: fit-content;
+  margin-bottom: 20px;
 }
 
 /* Paragraphs */
@@ -99,37 +202,62 @@ section p {
   margin-bottom: 15px;
 }
 
-/* Links */
-a {
-  color: #f2a6a6;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
+/* Cards Projetos */
+.card {
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
 }
 
-a:hover {
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.2);
+}
+
+/* Formulário */
+form input, form textarea {
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(255,255,255,0.2);
   color: #fff;
-  text-decoration: underline;
+  padding: 10px;
+}
+
+form button {
+  background-color: var(--vermelho);
+  border: none;
+  color: #fff;
+  font-weight: bold;
 }
 
 /* Footer */
 .footer {
-  background-color: #450000;
+  background-color: var(--fundo-escuro);
   text-align: center;
   padding: 25px 10px;
-  font-weight: 400;
-  font-size: 1rem;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.footer i {
+  font-size: 1.5rem;
+  margin: 0 5px;
 }
 
 /* Responsividade */
-@media (max-width: 600px) {
-  .header-content {
+@media (max-width: 768px) {
+  .header-content, header .container {
     flex-direction: column;
     text-align: center;
   }
 
   .profile-img {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+  }
+
+  .nav-link {
+    margin-left: 0;
+    display: inline-block;
+    margin-right: 10px;
   }
 }
