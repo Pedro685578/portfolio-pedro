@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Botão e opções de acessibilidade
     const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade');
     const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
 
@@ -35,10 +34,3 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.toggle('alto-contraste');
     });
 });
-
-// ScrollReveal para animações de entrada
-ScrollReveal().reveal('header', { delay: 300, origin: 'top', distance: '50px' });
-ScrollReveal().reveal('#sobre', { delay: 500, origin: 'left', distance: '50px' });
-ScrollReveal().reveal('#projetos', { delay: 700, origin: 'right', distance: '50px' });
-ScrollReveal().reveal('#contato', { delay: 900, origin: 'bottom', distance: '50px' });
-ScrollReveal().reveal('footer', { delay: 1000, origin: 'bottom', distance: '50px' });
