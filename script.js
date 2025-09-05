@@ -1,56 +1,44 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Botão e opções de acessibilidade
+    const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade');
+    const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
 
----
+    // Abrir/fechar menu de acessibilidade
+    botaoDeAcessibilidade.addEventListener('click', function() {
+        botaoDeAcessibilidade.classList.toggle('rotacao-botao');
+        opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
 
-## 📜 `script.js` – Acessibilidade  
+        const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
+        botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado);
+    });
 
-```javascript
-// Script de acessibilidade
-document.addEventListener("DOMContentLoaded", () => {
-  const botaoMenu = document.getElementById("botao-acessibilidade");
-  const opcoes = document.getElementById("opcoes-acessibilidade");
-  const aumentar = document.getElementById("aumentar-fonte");
-  const diminuir = document.getElementById("diminuir-fonte");
-  const contraste = document.getElementById("alterna-contraste");
+    // Acessibilidade: aumentar/diminuir fonte e contraste
+    const aumentaFonteBotao = document.getElementById('aumentar-fonte');
+    const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+    const alternaContraste = document.getElementById('alterna-contraste');
 
-  let tamanhoFonte = 100;
+    let tamanhoAtualFonte = 1;
 
-  // Alternar exibição do menu
-  botaoMenu.addEventListener("click", () => {
-    opcoes.classList.toggle("apresenta-lista");
-    const expandido = botaoMenu.getAttribute("aria-expanded") === "true";
-    botaoMenu.setAttribute("aria-expanded", !expandido);
-  });
+    aumentaFonteBotao.addEventListener('click', function() {
+        tamanhoAtualFonte += 0.1;
+        document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
+    });
 
-  // Aumentar fonte
-  aumentar.addEventListener("click", () => {
-    tamanhoFonte += 10;
-    document.body.style.fontSize = `${tamanhoFonte}%`;
-  });
+    diminuiFonteBotao.addEventListener('click', function() {
+        if (tamanhoAtualFonte > 0.6) {
+            tamanhoAtualFonte -= 0.1;
+            document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
+        }
+    });
 
-  // Diminuir fonte
-  diminuir.addEventListener("click", () => {
-    if (tamanhoFonte > 50) {
-      tamanhoFonte -= 10;
-      document.body.style.fontSize = `${tamanhoFonte}%`;
-    }
-  });
-
-  // Alternar contraste
-  contraste.addEventListener("click", () => {
-    document.body.classList.toggle("alto-contraste");
-  });
+    alternaContraste.addEventListener('click', function() {
+        document.body.classList.toggle('alto-contraste');
+    });
 });
 
-// Estilo adicional para contraste (adicione no style.css)
-/*
-.alto-contraste {
-  background: #000 !important;
-  color: #fff !important;
-}
-.alto-contraste a {
-  color: #0ff !important;
-}
-.alto-contraste .card {
-  background: #222 !important;
-}
-*/
+// ScrollReveal para animações de entrada
+ScrollReveal().reveal('header', { delay: 300, origin: 'top', distance: '50px' });
+ScrollReveal().reveal('#sobre', { delay: 500, origin: 'left', distance: '50px' });
+ScrollReveal().reveal('#projetos', { delay: 700, origin: 'right', distance: '50px' });
+ScrollReveal().reveal('#contato', { delay: 900, origin: 'bottom', distance: '50px' });
+ScrollReveal().reveal('footer', { delay: 1000, origin: 'bottom', distance: '50px' });
