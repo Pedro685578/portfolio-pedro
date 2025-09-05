@@ -1,36 +1,37 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade');
-    const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
+document.addEventListener("DOMContentLoaded", () => {
+  const botaoAcessibilidade = document.getElementById("botao-acessibilidade");
+  const opcoes = document.getElementById("opcoes-acessibilidade");
+  const aumentarFonte = document.getElementById("aumentar-fonte");
+  const diminuirFonte = document.getElementById("diminuir-fonte");
+  const alternaContraste = document.getElementById("alterna-contraste");
 
-    // Abrir/fechar menu de acessibilidade
-    botaoDeAcessibilidade.addEventListener('click', function() {
-        botaoDeAcessibilidade.classList.toggle('rotacao-botao');
-        opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
+  // 👉 Estado inicial do tamanho da fonte
+  let tamanhoFonte = parseFloat(getComputedStyle(document.body).fontSize);
 
-        const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
-        botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado);
-    });
+  // 👉 Alterna menu de acessibilidade (abrir/fechar)
+  botaoAcessibilidade.addEventListener("click", () => {
+    botaoAcessibilidade.classList.toggle("rotacao-botao");
+    opcoes.classList.toggle("apresenta-lista");
 
-    // Acessibilidade: aumentar/diminuir fonte e contraste
-    const aumentaFonteBotao = document.getElementById('aumentar-fonte');
-    const diminuiFonteBotao = document.getElementById('diminuir-fonte');
-    const alternaContraste = document.getElementById('alterna-contraste');
+    const expandido = botaoAcessibilidade.getAttribute("aria-expanded") === "true";
+    botaoAcessibilidade.setAttribute("aria-expanded", !expandido);
+  });
 
-    let tamanhoAtualFonte = 1;
+  // 👉 Aumentar fonte
+  aumentarFonte.addEventListener("click", () => {
+    tamanhoFonte += 2;
+    document.body.style.fontSize = tamanhoFonte + "px";
+  });
 
-    aumentaFonteBotao.addEventListener('click', function() {
-        tamanhoAtualFonte += 0.1;
-        document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
-    });
+  // 👉 Diminuir fonte
+  diminuirFonte.addEventListener("click", () => {
+    tamanhoFonte -= 2;
+    if (tamanhoFonte < 10) tamanhoFonte = 10; // evita ficar muito pequeno
+    document.body.style.fontSize = tamanhoFonte + "px";
+  });
 
-    diminuiFonteBotao.addEventListener('click', function() {
-        if (tamanhoAtualFonte > 0.6) {
-            tamanhoAtualFonte -= 0.1;
-            document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
-        }
-    });
-
-    alternaContraste.addEventListener('click', function() {
-        document.body.classList.toggle('alto-contraste');
-    });
+  // 👉 Alternar alto contraste
+  alternaContraste.addEventListener("click", () => {
+    document.body.classList.toggle("alto-contraste");
+  });
 });
